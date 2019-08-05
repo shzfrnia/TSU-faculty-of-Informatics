@@ -1,0 +1,200 @@
+
+
+//template<typename T>
+//T ask(const char* question) {
+//    cout << question;
+//    T answer;
+//    cin >> answer;
+//    return answer;
+//}
+//
+//bool ask_yes_or_no(const char* question) {
+//    char answer = ask<char>(question);
+//    while (!(answer == 'y' || answer == 'n')) {
+//        answer = ask<char>(question);
+//    }
+//    return answer == 'y';
+//}
+//
+//enum ArrayOrder {
+//    random_ordered = 1,
+//    asc,
+//    desc,
+//    oredered,
+//};
+
+
+//int main2() {
+//    size_t arrays_length = ask<size_t>("Enter arrays length: ");
+//    bool debug_mode = ask_yes_or_no("Enable display debug info: ");
+//    ArrayOrder order = ask<ArrayOrder>("Chose array order: ");
+//
+//    int array = generate_array(arrays_length, order);
+//
+//    bench();
+//
+//    return 0;
+//}
+
+
+
+
+//    template<typename T>
+//    static void shell_sort(T *arr, size_t *ind, size_t lenght) {
+//        size_t i, j, step;
+//        size_t tmp;
+//        for (step = lenght / 2; step > 0; step /= 2)
+//            for (i = step; i < lenght; i++) {
+//                tmp = ind[i];
+//                for (j = i; j >= step; j -= step) {
+//                    if (arr[tmp] < arr[ind[j - step]]) {
+//                        ind[j] = ind[j - step];
+//                    }
+//                    else
+//                        break;
+//                }
+//                ind[j] = tmp;
+//            }
+//    }
+
+
+//    template<typename RandomAccessIterator, typename Compare>
+//    static void shell_sort(RandomAccessIterator first, RandomAccessIterator last, Compare comp)
+//    {
+//        for(typename std::iterator_traits< RandomAccessIterator >::difference_type step = (last - first) / 2; step != 0; step /= 2)
+//            for(RandomAccessIterator i = first + step; i != last; ++i)
+//                for(RandomAccessIterator j = i; j - first >= step && comp(*j, *(j - step)); j -= step)
+//                    std::swap(*j, *(j - step));
+//    }
+
+
+//    template<typename T>
+//    static void shell_sort(T *arr, size_t lenght) {
+//        size_t i, j, step;
+//        T tmp;
+//        for (step = lenght / 2; step > 0; step /= 2)
+//            for (i = step; i < lenght; i++) {
+//                tmp = arr[i];
+//                for (j = i; j >= step; j -= step) {
+//                    if (tmp < arr[j - step]) {
+//                        arr[j] = arr[j - step];
+//                    }
+//                    else
+//                        break;
+//                }
+//                arr[j] = tmp;
+//            }
+//    }
+
+
+
+
+
+
+
+
+//    template<typename RandomAccessIterator, typename Ty>
+//    static void mergeAB(RandomAccessIterator a, RandomAccessIterator b, RandomAccessIterator c, RandomAccessIterator d, Ty buffer) {
+//        while (a != b || c != d) {
+//            if (a == b) {
+//                *buffer = *c;
+//                ++buffer; ++c;
+//            } else if (c == d) {
+//                *buffer = *a;
+//                ++buffer; ++a;
+//            } else if (*a < *c) {
+//                *buffer = *a;
+//                ++buffer; ++a;
+//            } else {
+//                *buffer = *c;
+//                ++buffer; ++c;
+//            }
+//        }
+//    }
+
+
+//    template<typename RandomAccessIterator>
+//    static void merge_sort(RandomAccessIterator begin, RandomAccessIterator end) {
+//        size_t length = distance(begin, end);
+//        auto buf = new typename iterator_traits<RandomAccessIterator>::value_type[length];
+//        for (size_t step = 1; step < length; step *= 2) {
+//            for(RandomAccessIterator b = begin; b < end; b += step * 2) {
+//                mergeAB(b, b+step, b+step, b+2*step, buf);
+//                std::copy(buf, buf+2*step, b);
+//            }
+//        }
+//    }
+
+
+
+
+
+//    template<typename T>
+//    static void shell_sort(T *arr, size_t *ind, size_t lenght) {
+//        size_t i, j, step;
+//        size_t tmp;
+//        for (step = lenght / 2; step > 0; step /= 2)
+//            for (i = step; i < lenght; i++) {
+//                tmp = ind[i];
+//                for (j = i; j >= step; j -= step) {
+//                    if (arr[tmp] < arr[ind[j - step]]) {
+//                        ind[j] = ind[j - step];
+//                    }
+//                    else
+//                        break;
+//                }
+//                ind[j] = tmp;
+//            }
+//    }
+
+//    template<typename T>
+//    static void shell_sort(T *arr, size_t lenght) {
+//        size_t i, j, step;
+//        T tmp;
+//        for (step = lenght / 2; step > 0; step /= 2)
+//            for (i = step; i < lenght; i++) {
+//                tmp = arr[i];
+//                for (j = i; j >= step; j -= step) {
+//                    if (tmp < arr[j - step]) {
+//                        arr[j] = arr[j - step];
+//                    }
+//                    else
+//                        break;
+//                }
+//                arr[j] = tmp;
+//            }
+//    }
+
+
+
+
+//    template<typename T>
+//    static void quick_sort(T *array, size_t *ind, int b, int e) { //удалить ind и все)
+//        double x;
+//        int i, j, c = b, d = e;
+//        while (c < d) {
+//            x = array[(c + d) / 2];
+//            i = c;
+//            j = d;
+//            while (i < j) {
+//                while (array[i] < x) i++;
+//                while (array[j] > x) j--;
+//                if (i <= j) {
+//                    swap(array[i], array[j]);
+//                    i++;
+//                    j--;
+//                }
+//            }
+//            if (j-c < d-i) {
+//                if (c < j) {
+//                    quick_sort(array,ind,c,j);
+//                }
+//                c = i;
+//            } else {
+//                if (i<d) {
+//                    quick_sort(array,ind,i,d);
+//                }
+//                d = j;
+//            }
+//        }
+//    }
