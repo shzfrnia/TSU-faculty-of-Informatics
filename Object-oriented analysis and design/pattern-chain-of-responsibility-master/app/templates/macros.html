@@ -1,0 +1,14 @@
+{% macro render_field(field, placeholder = "Empty") -%}
+    {% if field.errors %}
+    <div class="form-group has-error">
+        {{ field(class='form-control', type='text', placeholder=placeholder) }} 
+    </div>
+    {% for error in field.errors %}
+        <p class="help-block">{{ error }}</p>
+    {% endfor %}
+    {% else %}
+    <div class="form-group">
+    {{ field(class='form-control', type='text', placeholder=placeholder) }} 
+    </div>
+    {% endif %}
+{%- endmacro %}

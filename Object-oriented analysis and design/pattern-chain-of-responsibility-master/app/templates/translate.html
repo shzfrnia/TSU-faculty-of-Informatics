@@ -1,0 +1,51 @@
+{% extends "menu.html" %} 
+{% import 'macros.html' as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %} 
+<form action="" method="post" name='translate_form'>
+    {{ translate_form.hidden_tag() }}
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-4 col-centered">
+                <div class="row">                   
+                    <div class="col-xs-6">
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                {{translate_form.input_text.label}}
+                {{ macros.render_field(translate_form.input_text) }}
+            </div>
+            <div class="col-xs-6">
+                {{translate_form.output_field.label}}
+                {{ translate_form.output_field(class='form-control', readonly='') }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        {{translate_form.submit(class='btn btn-default')}}
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li><a onclick="change_value_in_input(this, 'to_language')" href="#">en</a></li>
+                            <li><a onclick="change_value_in_input(this, 'to_language')" href="#">ru</a></li>
+                            <li><a onclick="change_value_in_input(this, 'to_language')" href="#">uk</a></li>
+                        </ul>
+                    </div>
+                    {{macros.render_field(translate_form.to_language, placeholder=translate_form.to_language.label.text)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{%endblock %}

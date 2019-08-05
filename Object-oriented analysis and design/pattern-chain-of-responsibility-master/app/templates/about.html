@@ -1,0 +1,25 @@
+{% extends "menu.html" %}
+
+{% block app_content %}
+<div class="row container">
+    <div class="row">
+        <div class="col-xs-12 col-centered">
+            <h1 class="text-center">Цепочка обязанностей (Chain of Responsibility)</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-centered">
+            <p>
+                Можно избежать жесткой зависимости отправителя запроса от его получателя, при этом запросом начинает обрабатываться один
+                из нескольких объектов. Объекты-получатели связываются в цепочку, и запрос передается по цепочке, пока кокой-то объекта
+                его не обработает.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-centered">
+            <img src="../static/02_chain-min.png" width="100%" alt='UML'>
+        </div>
+    </div>
+</div>
+{%endblock %}
