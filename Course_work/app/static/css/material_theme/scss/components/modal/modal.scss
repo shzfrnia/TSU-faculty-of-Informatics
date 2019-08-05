@@ -1,0 +1,33 @@
+$modal_padding: 20px;
+
+.material-modal__header{
+	padding: $modal_padding;
+}
+
+.material-modal__content{
+	border-radius: 4px;
+	border: none;
+	@include m_shadow();
+}
+
+.material-modal__body{
+	padding: $modal_padding;
+}
+
+.material-modal__footer{
+	border-top: none;
+	padding: $modal_padding;
+}
+
+.material-modal__close{
+	opacity: 1;
+	font-weight: 400;
+}
+
+
+@import 'modifier/default.scss'; 
+@import 'modifier/primary.scss'; 
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss'; 

@@ -1,0 +1,18 @@
+.material-breadcrumb_warning{
+	
+	color: @color_white;
+	background-color: @color_warning;
+
+	& > li + li:before{
+		border-color: @color_white;
+	}
+	 
+	.material-breadcrumb__link{
+		
+		color: @color_white;
+		
+		&:hover, &:active{
+			background-color: @color_warning_active;
+		}
+	}
+}

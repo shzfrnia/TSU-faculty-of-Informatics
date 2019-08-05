@@ -1,0 +1,16 @@
+
+.material-radio-group{
+
+	.material-radio-group__check-radio{
+		
+		border-color: $color_default;
+	
+		&:after{
+			background-color: $color_default;
+		}
+	}
+}
+
+.material-radiobox:disabled ~ .material-radio-group__caption{
+	color: $color_default;
+} 

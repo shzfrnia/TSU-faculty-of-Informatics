@@ -1,0 +1,25 @@
+$panel_padding: 15px;
+
+.material-panel{
+	border: none;
+	@include m_shadow();
+}
+
+.material-panel__heading{
+	border-radius: 4px 4px 0 0;
+	font-weight: 700;
+    border: none;
+	padding: $panel_padding $panel_padding * 1.5;
+}
+
+.material-panel__body{
+	background-color: $color_white;
+	padding: $panel_padding $panel_padding * 1.5;
+}
+
+@import 'modifier/default.scss'; 
+@import 'modifier/primary.scss'; 
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss'; 

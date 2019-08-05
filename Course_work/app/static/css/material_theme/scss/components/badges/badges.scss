@@ -1,0 +1,38 @@
+$badge_font_size: 12px;
+
+.material-badge{
+	font-size: $badge_font_size;
+	padding: 13px 4px;
+	border-radius: 50%;
+    min-width: 40px;
+}
+
+.material-badge_lg{
+	font-size: $badge_font_size + 2px;
+	padding: 15px 6px;
+	min-width: 46px;
+}
+
+.material-badge_sm{
+	font-size: $badge_font_size - 1px;
+	padding: 12px 4px;
+	min-width: 37px;
+}
+
+.material-badge_xs{
+	font-size: $badge_font_size - 2px;
+	padding: 11px 3px;
+	min-width: 34px;
+}
+
+.material-badge_no-bg{
+	background: none !important;
+	border: none !important;
+}
+
+@import 'modifier/default.scss';
+@import 'modifier/primary.scss';
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss';

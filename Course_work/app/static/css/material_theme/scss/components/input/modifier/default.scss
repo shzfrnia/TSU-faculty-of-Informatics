@@ -1,0 +1,27 @@
+.materail-input-block{
+	
+	.materail-input-block__line{
+		background-color: $color_default_hover;
+	}
+}
+	
+.materail-input{
+
+	color: $color_black;
+	
+	&::-webkit-input-placeholder{
+		color: $color_default_active;
+	}
+
+	&::-moz-placeholder{
+		color: $color_default_active;
+	}
+
+	&:-ms-input-placeholder{
+		color: $color_default_active;
+	}
+	
+	&:focus{
+		border-bottom-color: $color_default_active;
+	}
+}

@@ -1,0 +1,14 @@
+.material-alert_info{
+	
+	background-color: $color_info;
+	color: $color_white;
+	
+	.material-alert__close{
+		
+		color: $color_white;
+		
+		&:hover{
+			color: $color_white;
+		}
+	}
+}

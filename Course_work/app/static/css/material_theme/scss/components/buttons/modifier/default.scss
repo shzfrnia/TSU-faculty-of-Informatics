@@ -1,0 +1,11 @@
+.material-btn{
+
+	background-color: $color_default;
+	color: $color_black;
+	border-color: $color_default;
+	
+	&:focus, &:active{
+		background-color: $color_default_active;
+		border-color: $color_default_active;
+	}
+}

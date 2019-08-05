@@ -1,0 +1,34 @@
+.material-tabs_success{
+
+	background-color: @color_success;
+
+	.material-tabs__tab-link{
+		
+		color: @color_white;
+		
+		&:before, &:after{
+			background-color: @color_white;
+		}
+	}
+	
+	.material-tabs__tab-link:hover{
+		
+		color: @color_white;
+		background-color: @color_success_hover;
+		
+		&:before, &:after{
+			background-color: @color_white;
+		}		
+	}
+
+	& > li.active > .material-tabs__tab-link, & > li.active > .material-tabs__tab-link:focus, 
+	& > li.active > .material-tabs__tab-link:hover{
+		
+		background-color: @color_success_active;
+		color: @color_white;
+		
+		&:before, &:after{
+			background-color: @color_white;
+		}		
+	}	
+} 

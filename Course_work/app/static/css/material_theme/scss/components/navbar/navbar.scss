@@ -1,0 +1,17 @@
+.material-navbar{
+	border-radius: 0;
+	border: none;
+	width: 100%;
+	@include m_shadow();
+}
+
+.material-navbar__nav > li > .material-navbar__link{
+	@include m_transition(background-color, .4s, ease-out, 0s);
+} 
+
+@import 'modifier/default.scss'; 
+@import 'modifier/primary.scss'; 
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss'; 

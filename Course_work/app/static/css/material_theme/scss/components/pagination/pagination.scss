@@ -1,0 +1,44 @@
+$pagination_size: 40px;
+
+.material-pagination{
+
+	.material-pagination__link, .material-pagination__link_disabled{
+		
+		border-radius: 50%;
+		margin: 0 5px;
+		font-weight: 700;
+		
+		padding: 0; 
+		text-align: center;
+		line-height: $pagination_size;
+		
+		width: $pagination_size;
+		height: $pagination_size;
+		
+		@include m_shadow();
+		@include m_complex_transition(background-color, color, .4s, ease-out, 0s);
+	}
+	
+	& > li:first-child .material-pagination__link, & > li:last-child .material-pagination__link{
+		border-radius: 50%;
+	}
+	
+	& > li:first-child .material-pagination__link{
+		margin-left: 0;
+	}
+	
+	& > li:last-child .material-pagination__link{
+		margin-right: 0;
+	}	
+	
+	.material-pagination__link_disabled, .material-pagination__link_disabled:hover, .material-pagination__link_disabled:active, .material-pagination__link_disabled:focus{
+		opacity: $disabled_opacity;
+	}	
+}
+
+@import 'modifier/default.scss';
+@import 'modifier/primary.scss';
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss';

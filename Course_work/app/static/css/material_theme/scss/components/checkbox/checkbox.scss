@@ -1,0 +1,97 @@
+$checkbox_size: 25px;
+$checkbox_font_size: $main_font_size;
+$checkbox_arrow_size: $checkbox_size / 5;
+
+.material-checkbox-group__label{
+
+	position: relative;
+	display: block;
+	cursor: pointer;
+	height: $checkbox_size;
+	
+	line-height: $checkbox_size;
+	padding-left: $checkbox_size + 5px;
+	
+	&:after{
+
+		content: "";
+		display: block;
+		width: $checkbox_arrow_size;
+		height: $checkbox_arrow_size * 3;
+		
+		opacity: .9;
+		border-right: 2px solid $color_default;
+		border-top: 2px solid $color_default;
+
+		position: absolute;
+		left: $checkbox_arrow_size;
+		top: $checkbox_arrow_size * 3;
+		
+		@include m_transform(scaleX(-1) rotate(135deg));
+		@include m_transform_origin(left, top);
+	}
+
+	&:before{
+		
+		content: "";
+		display: block;
+		border: 2px solid;
+
+		width: $checkbox_size;
+		height: $checkbox_size;
+		position: absolute;
+		left: 0;
+	}
+}
+
+.material-checkbox-group__label{
+	font-size: $checkbox_font_size;
+	@include m_user_select_none();
+}
+
+.material-checkbox:disabled ~ .material-checkbox-group__label{
+	cursor: no-drop;
+}
+
+.material-checkbox{
+	display: none;
+}
+
+.material-checkbox-group{
+	.material-checkbox:checked + .material-checkbox-group__label:after{
+		@include m_animation(check, .8s);
+		opacity: 1;
+	}
+}
+
+@import 'modifier/default.scss';
+@import 'modifier/primary.scss';
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss';
+
+@mixin keyframes_check(){
+	0%{
+		height: 0;
+		width: 0;
+	}
+
+	25%{
+		height: 0;
+		width: $checkbox_arrow_size;
+	}
+
+	50%{
+		height: $checkbox_arrow_size * 3;
+		width: $checkbox_arrow_size;
+	}
+}
+
+@-webkit-keyframes check{
+	@include keyframes_check()
+}
+
+@keyframes check{
+	@include keyframes_check()
+}

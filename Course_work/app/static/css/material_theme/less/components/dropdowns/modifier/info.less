@@ -1,0 +1,45 @@
+.material-dropdown_info{
+	
+	border-bottom: 1px solid @color_info;
+
+	.material-dropdown__caret{
+		border-top-color: @color_info;
+	}
+}
+
+.material-dropdown-menu_info{
+
+	background-color: @color_info;
+
+	.material-dropdown__header{
+		color: @color_white;
+	}
+	
+	.material-dropdown__divider{
+		background-color: @color_white;
+	}
+	
+	.material-dropdown-menu__link{
+		
+		color: @color_white;
+		
+		&:hover{
+			color: @color_white;
+			background-color: @color_info_hover; 
+		}
+		
+		&:active, &:focus{
+			color: @color_white;
+			background-color: @color_info_active; 
+		}
+	}
+	
+	.material-dropdown-menu__link_disabled{
+		
+		color: @color_white;
+		
+		&:hover, &:active, &:focus{
+			color: @color_white;
+		}
+	}
+}

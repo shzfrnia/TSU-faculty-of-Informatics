@@ -1,0 +1,36 @@
+$list_group_padding: 15px;
+
+.material-list-group__item{
+	
+	border: none;
+	border-bottom: 1px solid;
+	border-radius: 0;
+	
+	position: relative;
+	margin-bottom: 0;
+	padding: $list_group_padding ($list_group_padding * 2) + 10px $list_group_padding $list_group_padding * 2;
+	@include m_transition(background-color, .2s, ease-out, 0s);
+	
+	&:after{
+		@include m_clear();
+	}
+	
+	&:first-child{
+		border-radius: 0;
+	}
+}
+
+.material-list-group__item_disabled{
+	opacity: $disabled_opacity;
+}
+
+.material-list-group__badge{
+	@include m_absolute_right_middle();
+}
+
+@import 'modifier/default.scss'; 
+@import 'modifier/primary.scss'; 
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss';

@@ -1,0 +1,17 @@
+.material-breadcrumb{
+
+	background-color: @color_default;
+	 
+	& > li + li:before{
+		border-color: @color_black;
+	}	 
+	 
+	.material-breadcrumb__link{
+		
+		color: @color_black;
+		
+		&:hover, &:active{
+			background-color: @color_default_active;
+		}
+	}
+}

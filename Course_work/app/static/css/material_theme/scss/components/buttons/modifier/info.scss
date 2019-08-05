@@ -1,0 +1,18 @@
+.material-btn_info{
+
+	background-color: $color_info;
+	border-color: $color_info;
+	color: $color_white;
+	
+	&:hover{
+		color: $color_white;
+		background-color: $color_info_hover;
+		border-color: $color_info_hover;
+	}
+
+	&:focus, &:active{
+		background-color: $color_info_active;
+		border-color: $color_info_active;
+		color: $color_white;
+	}
+}

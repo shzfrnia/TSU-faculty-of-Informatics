@@ -1,0 +1,50 @@
+$card_padding: 20px;
+
+.material-card{
+	border-radius: 0;
+	border: none;
+	padding: 0;
+	@include m_shadow();
+}
+
+.material-card__header{
+	position: relative;
+}
+
+.material-card__content{
+	padding: $card_padding $card_padding;
+}
+
+.material-card__footer{
+	
+	padding: $card_padding;
+	border-top: 1px solid $color_default;
+	
+	&:after{
+		@include m_clear();
+	}
+}
+
+.material-card__img{
+	max-width: 100%;
+	height: auto;
+} 
+
+.material-card__title{
+	margin: 0 0 15px;
+}
+
+.material-card__showmore{
+	display: block;
+}
+
+.material-card__showmore_pos-left{
+	float: left;
+	margin-right: 10px;
+}
+
+.material-card__showmore_pos-right{
+	float: right;
+	margin-left: 10px;
+}
+

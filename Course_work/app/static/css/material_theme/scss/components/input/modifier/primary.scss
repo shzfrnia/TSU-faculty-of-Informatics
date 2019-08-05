@@ -1,0 +1,10 @@
+.materail-input-block_primary{
+	
+	.materail-input-block__line{
+		background-color: $color_primary_hover;
+	}
+	
+	.materail-input:focus{
+		border-bottom-color: $color_primary_active;
+	}
+}

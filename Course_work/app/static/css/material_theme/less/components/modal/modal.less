@@ -1,0 +1,33 @@
+@modal_padding: 20px;
+
+.material-modal__header{
+	padding: @modal_padding;
+}
+
+.material-modal__content{
+	border-radius: 4px;
+	border: none;
+	.m_shadow();
+}
+
+.material-modal__body{
+	padding: @modal_padding;
+}
+
+.material-modal__footer{
+	border-top: none;
+	padding: @modal_padding;
+}
+
+.material-modal__close{
+	opacity: 1;
+	font-weight: 400;
+}
+
+
+@import 'modifier/default.less'; 
+@import 'modifier/primary.less'; 
+@import 'modifier/success.less';
+@import 'modifier/info.less';
+@import 'modifier/warning.less';
+@import 'modifier/danger.less'; 

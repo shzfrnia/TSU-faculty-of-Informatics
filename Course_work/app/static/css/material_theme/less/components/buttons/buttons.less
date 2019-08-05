@@ -1,0 +1,55 @@
+@button_font_size: @main_font_size;
+@base_padding: 5px;
+@base_padding_lg: @base_padding + 2px;
+@base_padding_sm: @base_padding - 1px;
+@base_padding_xs: @base_padding - 2px;
+
+.material-btn{
+	
+	font-size: @button_font_size;
+	padding: @base_padding @base_padding * 2;
+	cursor: pointer;
+	border-radius: 2px;
+	
+	.m_shadow();
+	.m_complex_transition(box-shadow, background-color, .2s, ease-in, 0s);
+
+	&:hover{
+		.m_shadow_hover();
+	}
+
+	&:focus, &:active{
+		outline: 0 !important;
+		.m_shadow_hover();
+	}
+}
+
+.material-btn_lg, .material-btn-group_lg .material-btn{
+	padding: @base_padding_lg @base_padding * 2;
+	font-size: @button_font_size + 2px;
+}
+
+.material-btn_sm, .material-btn-group_sm .material-btn{
+	padding: @base_padding_sm @base_padding * 2;
+	font-size: @button_font_size - 1px;
+}
+
+.material-btn_xs, .material-btn-group_xs .material-btn{
+	padding: @base_padding_xs @base_padding * 2;
+	font-size: @button_font_size - 2px;
+} 
+
+.material-btn__caret{
+	margin-left: 5px;
+}	
+
+@import 'modifier/default.less';
+@import 'modifier/primary.less';
+@import 'modifier/success.less';
+@import 'modifier/info.less';
+@import 'modifier/warning.less';
+@import 'modifier/danger.less';
+
+.material-btn_toggle{
+	height: 100%;
+}

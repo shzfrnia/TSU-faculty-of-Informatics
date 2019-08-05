@@ -1,0 +1,47 @@
+{% extends "menu.html" %} 
+{% import "macros.html" as macros %}
+
+{% block app_content %}
+	<div class="row form-group">
+		<div class="col-xs-12 bg-white">
+			<form  action="{{ url_for('search_results', search_input=g.search_form.search_input.data) }}" method="get" name="SearchInput" role="search">
+				{{ g.search_form.hidden_tag() }}
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<h3 style='margin-right: 10px;'>Search notepads:</h3>
+							</td>
+							<td style="width: 55%">
+								<div style="margin: auto;" class="form-group materail_input_block">
+									{{ g.search_form.search_input(class='form-control materail_input', placeholder="Try to find notepad!", type='text',) }}
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-4">
+			{{ macros.render_thumbnail(icon="glyphicon glyphicon-folder-open", header="Look at the public notepads!", text="You can find notepad for you and fork one the your libirary!", text_link="Go!", link=url_for('public_notepads')) }}
+		</div>
+		<div class="col-sm-6 col-md-4">
+			{{ macros.render_thumbnail(icon="glyphicon glyphicon-book", header="Play and remembering!", text="Just play in interractive games with your cards! Choose notepad and go!", text_link="Go!", link=url_for('notepads')) }}
+		</div>
+		<div class="col-sm-6 col-md-4">
+			{{ macros.render_thumbnail(icon="glyphicon glyphicon-stats", header="Look at the your statistics!", text="When you are playing we collect some information for you!", text_link="Go!", link=url_for('statistics')) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h2 class="page-header">Last your notepads</h2>
+			{% for notepad in last_your_notepads %}
+				<div class="col-xs-6 col-md-3">
+					{% include '_notepad.html' %} 
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

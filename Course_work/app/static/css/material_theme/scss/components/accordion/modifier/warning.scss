@@ -1,0 +1,16 @@
+.material-accordion_warning{
+	
+	.material-accordion__title{
+		
+		background-color: $color_warning_active;
+		color: $color_white;
+		
+		&.collapsed:hover{
+			background-color: $color_warning_hover;
+		}
+		
+		&.collapsed{
+			background-color: $color_warning;
+		}
+	}	
+}

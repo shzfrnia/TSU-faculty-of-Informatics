@@ -1,0 +1,38 @@
+$label_font_size: $main_font_size;
+$label_padding: 4px;
+$label_padding_lg: $label_padding + 1px;
+$label_padding_sm: $label_padding - 1px;
+$label_padding_xs: $label_padding - 2px;
+
+.material-label{
+	
+	font-weight: 700;
+	font-size: $label_font_size;
+	
+	display: inline-block;
+	border-radius: 0;
+	padding: $label_padding $label_padding * 4;
+	@include m_complex_transition(box-shadow, background-color, .5s, ease-out, 0s);
+}
+
+.material-label_lg{
+	padding: $label_padding_lg $label_padding_lg * 4;
+	font-size: $label_font_size + 2px;
+}
+
+.material-label_sm{
+	padding: $label_padding_sm $label_padding_sm * 4;
+	font-size: $label_font_size - 1px;
+}
+
+.material-label_xs{
+	padding: $label_padding_xs $label_padding_xs * 4;
+	font-size: $label_font_size - 2px;
+} 
+
+@import 'modifier/default.scss'; 
+@import 'modifier/primary.scss'; 
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss';

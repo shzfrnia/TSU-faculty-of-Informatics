@@ -1,0 +1,45 @@
+$accordion_padding: 15px;
+
+.material-accordion{
+
+	width: 100%;
+
+	.material-accordion__panel, .material-accordion__heading{
+		border: none;
+		border-radius: 0;
+	}
+	
+	.material-accordion__panel{
+		@include m_shadow();
+	}
+	
+	.material-accordion__heading{
+		padding: 0;
+	}
+	
+	.material-accordion__title{
+		
+	    font-weight: 700;	
+		text-decoration: none;
+		
+		cursor: default;
+		display: block;
+		padding: $accordion_padding $accordion_padding * 2;
+		@include m_transition(background-color, .5s, ease-out, 0s);
+		
+		&:hover{
+			text-decoration: none;
+		}	
+		
+		&.collapsed{
+			cursor: pointer;
+		}		
+	}
+}
+
+@import 'modifier/default.scss';
+@import 'modifier/primary.scss';
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss';

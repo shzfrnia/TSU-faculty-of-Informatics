@@ -1,0 +1,6 @@
+{% extends "menu.html" %} {% block app_content %}
+<div class="searchResult">
+  <h1>Results for: {{ search_input }}</h1>
+  {% include '_notepadsList.html' %}
+</div>
+{%endblock %}

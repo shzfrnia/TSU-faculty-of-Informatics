@@ -1,0 +1,40 @@
+@pills_font_size: @main_font_size;
+@pills_padding: 5px; 
+
+.material-pills{ 
+	
+	.material-pills__link{
+		font-size: @pills_font_size;
+		border-radius: 0;
+	    padding: @pills_padding @pills_padding * 3;	
+		.m_complex_transition(background-color,color, .3s, ease-out, 0s)
+	}
+	
+	.material-pills__link_disabled{
+		
+		opacity: @disabled_opacity;
+		cursor: no-drop;
+		
+		&:hover, &:focus, &:active{
+			background: none;
+		}
+	}	
+}
+
+
+
+@import 'modifier/default.less'; 
+@import 'modifier/primary.less'; 
+@import 'modifier/success.less';
+@import 'modifier/info.less';
+@import 'modifier/warning.less';
+@import 'modifier/danger.less'; 
+
+
+
+
+
+
+
+
+

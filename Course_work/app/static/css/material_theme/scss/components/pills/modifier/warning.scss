@@ -1,0 +1,25 @@
+.material-pills_warning{
+	
+	.material-pills__link{
+
+		color: $color_warning;
+	
+		&:hover{
+			background-color: $color_warning_hover;
+			color: $color_white;
+		}
+	}
+	
+	.active .material-pills__link, .active .material-pills__link:hover, .material-pills__link:focus{
+		background-color: $color_warning_active !important; 
+		color: $color_white;
+	}	
+	
+	.material-pills__link_disabled{
+		
+		&:hover, &:focus, &:active{
+			background: none;
+			color: $color_warning;
+		}
+	}		
+}

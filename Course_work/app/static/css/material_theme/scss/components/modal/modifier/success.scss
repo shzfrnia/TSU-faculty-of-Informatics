@@ -1,0 +1,10 @@
+.material-modal_success{
+	
+	.material-modal__header{
+		background-color: $color_success; 
+	}
+	
+	.material-modal__title, .material-modal__close{
+		color: $color_white;
+	}
+}

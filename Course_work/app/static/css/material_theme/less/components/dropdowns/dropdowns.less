@@ -1,0 +1,71 @@
+@dropdown_size_text: @main_font_size;
+@caret_size: 4px;
+@padding-left: 10px;
+
+.material-dropdown-menu{
+	
+	.m_absolute_left_top();
+	margin: 0;
+	
+	padding: 0;
+	border-radius: 0;
+	.m_shadow();
+	
+	min-width: 200px;
+	width: 100%;
+	
+	.material-dropdown-menu__link{
+		text-decoration: none;
+		font-size: @dropdown_size_text;
+		padding: 8px @padding-left *2;		
+		.m_transition(background-color, .8s, ease-out, 0s)
+	}
+
+	.material-dropdown__divider{
+		margin: 0
+	}	
+}
+
+.material-dropdown__header{
+	padding: @padding-left;
+	font-size: @dropdown_size_text;
+    font-weight: 700;
+}
+
+.material-dropdown-menu__link_disabled{
+	&:hover, &:active, &:focus{
+		background: none !important;
+	}
+}
+
+.material-dropdown__caret{
+	.m_absolute_right_middle();
+	border-width: @caret_size;
+}
+
+.material-dropdown__btn{
+
+	border: none;
+	background: none;
+	font-size: @dropdown_size_text;
+	
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+	padding: 3px 10px 3px 5px;
+}
+
+.material-btn-group{
+	
+	.material-dropdown-menu{
+		top: -1px;
+		left: -1px;
+	}
+} 
+
+@import 'modifier/default.less'; 
+@import 'modifier/primary.less'; 
+@import 'modifier/success.less';
+@import 'modifier/info.less';
+@import 'modifier/warning.less';
+@import 'modifier/danger.less';

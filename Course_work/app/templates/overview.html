@@ -1,0 +1,34 @@
+{% extends "menu.html" %} {% block app_content %}
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Учите просто, быстро, удобно.</h1>
+      <p>Создавайте свои блокноты и тренеруйтесь в их запоминании!</p>
+    </div>
+    <div class="col-md-4 col-md-offset-1">
+      <div
+        href="#"
+        class="thumbnail background-none border-none non-selectable"
+      >
+        <img src="../static/overwiev.png" alt="overwiev" />
+      </div>
+    </div>
+  </div>
+  <div class="btn-group btn-group-lg material_btn_group material_btn_group_lg">
+    <button
+      type="button"
+      style="width: 130px"
+      id="start"
+      class=" material_btn_lg material_btn_primary"
+      href="{{ url_for('login') }}"
+    >
+      Let's start!
+    </button>
+  </div>
+</div>
+<script>
+  document.getElementById("start").onclick = function() {
+    location.href = "{{url_for('login')}}";
+  };
+</script>
+{% endblock %}

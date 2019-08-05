@@ -1,0 +1,33 @@
+
+/*mixin for "transform" property*/
+
+@import 'helpers/transform.less';
+
+/*mixin for "animation" and "transition" properties*/
+
+@import 'helpers/animations.less';
+
+/*mixin for positions*/
+
+@import 'helpers/positions.less';
+
+.m_clear(){
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.m_shadow(){
+	box-shadow: 0 2px 5px 0 @color_shadow;
+}
+
+.m_shadow_hover(){
+	box-shadow: 0 4px 7px 0 @color_shadow;
+}
+
+.m_user_select_none(){
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;	
+}
+

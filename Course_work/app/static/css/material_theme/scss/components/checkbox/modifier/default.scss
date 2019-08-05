@@ -1,0 +1,18 @@
+.material-checkbox-group{
+	
+	.material-checkbox:checked + .material-checkbox-group__label:after{
+		border-color: $color_black;
+	}
+	
+	.material-checkbox:checked + .material-checkbox-group__label:before{
+		background-color: $color_default;
+	}
+	
+	.material-checkbox-group__label:before{
+		border-color: $color_default;
+	}
+}
+
+.material-checkbox:disabled ~ .material-checkbox-group__label{
+	color: $color_default;
+} 

@@ -1,0 +1,8 @@
+{% extends "menu.html" %} 
+{% block app_content %}
+{% if notepads %}
+{% include '_notepadsList.html' %} 
+{% else %}
+<h2>You are learned all your notepds</h2>
+{% endif %}
+{% endblock %}

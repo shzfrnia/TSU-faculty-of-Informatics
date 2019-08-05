@@ -1,0 +1,39 @@
+@mixin m_absolute_right_middle(){
+	position: absolute;
+	top: 50%;
+	right: 0;
+	@include m_translate(0, -50%);
+}
+
+@mixin m_absolute_left_middle(){
+	position: absolute;
+	top: 50%;
+	left: 0;
+	@include m_translate(0, -50%);
+}
+
+@mixin m_absolute_center_middle(){
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include m_translate(-50%, -50%);
+}
+
+@mixin m_absolute_left_top(){
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+@mixin m_absolute_left_bottom(){
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+@mixin m_absolute_center_bottom(){
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	@include m_translate(-50%, 0);
+}

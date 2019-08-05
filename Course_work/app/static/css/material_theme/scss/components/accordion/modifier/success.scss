@@ -1,0 +1,16 @@
+.material-accordion_success{
+	
+	.material-accordion__title{
+		
+		background-color: $color_success_active;
+		color: $color_white;
+		
+		&.collapsed:hover{
+			background-color: $color_success_hover;
+		}
+		
+		&.collapsed{
+			background-color: $color_success;
+		}
+	}	
+}

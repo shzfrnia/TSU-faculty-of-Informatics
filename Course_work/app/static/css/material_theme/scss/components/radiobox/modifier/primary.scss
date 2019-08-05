@@ -1,0 +1,12 @@
+
+.material-radio-group_primary{
+
+	.material-radio-group__check-radio{
+		
+		border-color: $color_primary;
+		
+		&:after{
+			background-color: $color_primary;
+		}
+	}
+} 

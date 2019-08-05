@@ -1,0 +1,20 @@
+$alert_padding: 20px;
+
+.material-alert{
+	border-radius: 0;
+	@include m_shadow();
+	font-weight: 700;
+	padding: $alert_padding;
+}
+
+.material-alert__close{
+	opacity: 1; 
+	text-shadow: none;
+}
+ 
+@import 'modifier/default.scss';
+@import 'modifier/primary.scss';
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss';

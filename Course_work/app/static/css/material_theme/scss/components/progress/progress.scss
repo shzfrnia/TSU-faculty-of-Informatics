@@ -1,0 +1,13 @@
+$height-progress: 5px;
+
+.material-progress{
+	height: $height-progress;
+	border-radius: 0;
+}
+
+@import 'modifier/default.scss';
+@import 'modifier/primary.scss';
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss';

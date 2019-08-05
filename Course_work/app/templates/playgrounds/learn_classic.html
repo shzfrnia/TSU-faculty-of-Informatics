@@ -1,0 +1,54 @@
+{% extends "menu.html" %} 
+{% block app_content %}
+<h1>{{notepad.name}}</h1>
+<div class="bg-white">
+    <br>
+    <div class="row ">
+        <div class="row memorizePanel"> 
+            <div class="row">
+                <div class="col-xs-10 col-centered">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{procent}}" aria-valuemin="0" aria-valuemax="100"
+                            style="width: {{procent}}%;">
+                            {{procent}}% You've known!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-8 col-centered cardFront">
+                <div style="height:400px;" href="#" class="thumbnail material_thumbnail text-center">
+                    <h2 class="v-center">
+                        {{card.first_part}}
+                    </h2>  
+                </div>
+            </div>
+            <div class="col-xs-8 col-centered cardBack">
+                <div style="height:400px;" href="#" class="thumbnail material_thumbnail text-center">
+                    <h2 class="v-center">
+                        {{card.last_part}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row btn-group-wrap">
+            <div class="col-xs-12">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button onclick="javascript:" style="width: 140px;" type="button" class="btn btn-default material_btn material_btn_primary flipCard">
+                        <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>
+                        Flip Card
+                    </button>
+                    <a href="{{ url_for('mark_known', card_id=card.card_id, play_mode=play_mode) }}" style="width: 140px;" type="button" class="btn btn-default material_btn material_btn_success">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        I know it
+                    </a>
+                    <a href="{{url_for('learn', mode=play_mode, notepad_id=notepad.notepad_id)}}" style="width: 140px;" type="button" class="btn btn-default material_btn material_btn_primary">
+                        Next
+                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div> 
+{% endblock %}

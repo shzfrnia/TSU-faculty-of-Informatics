@@ -1,0 +1,80 @@
+@tab_height_line: 2px;
+@tab_padding: 15px;
+
+.material-tabs-group{
+	.m_shadow();
+}
+
+.material-tabs{
+
+	li > .material-tabs__tab-link{
+
+		text-align: center;	
+		padding: @tab_padding @tab_padding * 3;
+		
+		border: none;
+		border-radius: 0;
+		cursor: pointer;
+		overflow: hidden;
+		
+		font-size: @main_font_size;
+		font-weight: 700;
+		.m_transition(background-color, .5s, ease-out, .1s);
+		
+		&:before, &:after{
+		
+			content: "";
+			display: block;
+			width: 25%;
+			height: @tab_height_line;
+			
+			.m_absolute_center_bottom();
+			.m_transition(width, .5s, ease-out, .1s);
+		}
+		
+		&:hover, &:active, &:focus{
+			outline: none;
+		}		
+	}
+	
+	li > .material-tabs__tab-link_disabled{
+			
+		opacity: @disabled_opacity;
+		cursor: no-drop;
+		
+		&:before, &:after, &:hover:before, &:hover:after{
+			width: 25%;
+		}
+		
+		&:hover{
+			background: none !important;
+		}
+	}	
+
+	& > li.active{
+		
+		& > .material-tabs__tab-link{
+			
+			border: none;
+			
+			&:before, &:after{
+				width: 100%;
+			}
+			
+			&:hover, &:focus{
+				border: none;
+			}
+		}
+	}
+}	
+
+.materail-tabs-content{
+	padding: 15px 20px;
+}
+
+@import 'modifier/default.less'; 
+@import 'modifier/primary.less'; 
+@import 'modifier/success.less';
+@import 'modifier/info.less'; 
+@import 'modifier/warning.less';
+@import 'modifier/danger.less';

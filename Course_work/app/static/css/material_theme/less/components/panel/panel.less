@@ -1,0 +1,25 @@
+@panel_padding: 15px;
+
+.material-panel{
+	border: none;
+	.m_shadow();
+}
+
+.material-panel__heading{
+	border-radius: 4px 4px 0 0;
+	font-weight: 700;
+    border: none;
+	padding: @panel_padding @panel_padding * 1.5;
+}
+
+.material-panel__body{
+	background-color: @color_white;
+	padding: @panel_padding @panel_padding * 1.5;
+}
+
+@import 'modifier/default.less'; 
+@import 'modifier/primary.less'; 
+@import 'modifier/success.less';
+@import 'modifier/info.less';
+@import 'modifier/warning.less';
+@import 'modifier/danger.less'; 

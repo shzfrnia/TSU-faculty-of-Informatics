@@ -1,0 +1,71 @@
+$input_font_size: $main_font_size;
+$input_height_line: 2px;
+$input_duration_slide_line: .4s;
+
+.materail-input-block{
+
+	position: relative;
+	overflow: hidden;
+	
+	&:hover .materail-input-block__line{
+		@include m_translate(0, 0);
+	} 		
+}
+
+.materail-input{
+ 
+	padding: 5px 10px; 
+	font-size: $input_font_size;
+	
+	border: none;
+	border-bottom: $input_height_line solid $color_default;
+	border-radius: 0;
+	box-shadow: none;
+	
+	&:focus{
+		outline: 0;
+		box-shadow: none;
+	}
+	
+	&[disabled]{
+		@include m_user_select_none();	
+	}
+	
+	&[disabled] + .materail-input-block__line{
+		display: none;
+	}	
+}
+
+.materail-input-block__line{
+	
+	content: "";
+	display: block;
+	width: 100%;
+	height: $input_height_line;
+
+	@include m_absolute_left_bottom();
+	@include m_translate(-110%, 0);	
+}
+
+.materail-input_slide-line{
+	
+	@include m_translate(0, 0);
+
+	&:hover .materail-input-block__line{
+		@include m_transition(transform, $input_duration_slide_line, cubic-bezier(0.5,-0.01, 0.59, 0.04), 0s);
+	}
+}
+
+.material-textarea{
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 50px;
+	max-height: 100px;
+}
+
+@import 'modifier/default.scss'; 
+@import 'modifier/primary.scss'; 
+@import 'modifier/success.scss';
+@import 'modifier/info.scss';
+@import 'modifier/warning.scss';
+@import 'modifier/danger.scss';

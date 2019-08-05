@@ -1,0 +1,27 @@
+{% extends "menu.html" %}
+{% block app_content %}
+<h1>{{notepad.name}}</h1>
+<div class="bg-white">
+    <br>
+    <div class="row">
+        <div class="row">
+            <div class="col-xs-5 col-centered">
+                <h1 class="text-center">We will built it in soon!</h1>
+                <img class="thumbnail" src="../static/work.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5 col-centered">
+                <a class="material_btn material_btn_primary" href="{{url_for('index')}}">Back to main page</a>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+{#
+    {{notepad.name}}
+    {% for c in cards %}
+    <div>{{c.first_part}} + {{c.last_part}}</div>
+    {% endfor %}
+#}
+{% endblock %}

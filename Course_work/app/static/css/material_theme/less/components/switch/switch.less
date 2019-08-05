@@ -1,0 +1,63 @@
+@width_slider: 60px;
+@height_slider: @width_slider / 6;
+@size_slider_distance: @width_slider / 2;
+
+.materail-switch{
+	width: @width_slider;
+	height: @width_slider / 2;
+	position: relative;
+}
+
+.materail-switch__element{
+	display: none;
+}
+
+.materail-switch__label{
+
+	cursor: pointer;
+	display: block;
+	height: 100%;
+	margin-bottom: 0;
+
+	&:before, &:after{
+		display: block;
+		content: "";
+		.m_absolute_left_middle();		
+	}
+	
+	&:before{
+		width: 100%;
+		height: @height_slider;
+		border-radius: @width_slider;
+		.m_transition(background-color, .2s, cubic-bezier(0.5,-0.01, 0.59, 0.04), .2s);
+	}
+	
+	&:after{
+		
+		height: @width_slider / 2;
+		width: @width_slider / 2;
+		
+		border-radius: 50%;
+		.m_shadow();
+		.m_complex_transition(transform, background-color, .4s, cubic-bezier(0.5,-0.01, 0.59, 0.04), 0s);
+	}
+}
+
+.materail-switch__element{
+
+	&:disabled + .materail-switch__label{
+		cursor: no-drop;
+		opacity: @disabled_opacity;
+	}
+
+	&:checked + .materail-switch__label:after{
+		.m_translate(@size_slider_distance, -50%);
+	}
+}
+
+@import 'modifier/default.less'; 
+@import 'modifier/primary.less'; 
+@import 'modifier/success.less';
+@import 'modifier/info.less';
+@import 'modifier/warning.less';
+@import 'modifier/danger.less';

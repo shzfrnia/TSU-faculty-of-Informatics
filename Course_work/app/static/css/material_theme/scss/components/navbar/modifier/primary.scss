@@ -1,0 +1,30 @@
+.material-navbar_primary{
+	
+	background-color: $color_primary; 
+	
+	.material-navbar__brand{
+		color: $color_white; 
+	}
+
+	.material-navbar__nav > li > .material-navbar__link{
+		
+		color: $color_white;
+		
+		&:hover{
+			background-color: $color_primary_hover; 
+		}
+		
+		&:active{
+			background-color: $color_primary_active; 
+		}	
+	} 
+
+	.materail-navbar__icon-bar{
+		background-color: $color_white; 
+	}
+	
+	.materil-navbar__collapse{
+		border-top-color: $color_primary_active;
+	}	
+} 
+

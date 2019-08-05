@@ -1,0 +1,20 @@
+.material-list-group_danger{
+	
+	color: $color_white;
+	
+	.material-list-group__item{
+	
+		background-color: $color_danger;
+		border-color: $color_white;
+	 
+		&:hover{
+			background-color: $color_danger_hover;
+		}
+	}
+	
+	.material-list-group__item_disabled{
+		&:hover{
+			background-color: $color_danger;
+		}
+	}
+}

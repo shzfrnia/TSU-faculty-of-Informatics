@@ -1,0 +1,52 @@
+{% extends "menu.html" %}
+{% import 'macros.html' as macros %}
+
+{% block app_content %}
+<div class="row">
+  <div class="col-sm-6 col-md-4 col-centered">
+    <div class="thumbnail material_thumbnail">
+      <img id='login-ico' src="../static/Ghost_Emoji_large.png" alt="Thumbnail label" />
+      <div class="caption material_caption">
+        <hr>
+        <form action="" method="post" class="loginForm" name="login">
+          {{ form.hidden_tag() }}
+        <!-- <h3 class="text-center">{{ form.login.label }}</h3> -->
+          {{ macros.render_material_input(form.login, form.login.label.text) }}
+        <!-- <h3 class="text-center">{{ form.password.label }}</h3> -->
+          {{ macros.render_material_input(form.password, form.password.label.text, "password") }}
+      </div>
+        <div class="row btn-group-wrap" role="group">
+          <div class="btn-group btn-group-lg material_btn_group material_btn_group_lg">
+            {{form.submit(class="material_btn_lg material_btn_primary", style="width:110px;")}}
+          </div>
+          <div class="btn-group btn-group-lg material_btn_group material_btn_group_lg">
+              <button
+              type="button"
+              style="width: 110px" 
+              id="SignUp"
+              class=" material_btn_lg material_btn_primary"
+              href="{{ url_for('sign_up') }}"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-7 col-centered">
+            <div class="center-block material_checkbox_group">
+              {{form.remember_me(class="material_checkbox")}}
+              {{form.remember_me.label(class="material_label_checkbox")}}
+            </div>
+          </div>
+        </div>
+        <br>
+        </form>
+    </div>
+  </div>
+</div>
+<script>
+    document.getElementById("SignUp").onclick = function() {
+      location.href = "{{url_for('sign_up')}}";
+    };
+</script>
+{% endblock %}

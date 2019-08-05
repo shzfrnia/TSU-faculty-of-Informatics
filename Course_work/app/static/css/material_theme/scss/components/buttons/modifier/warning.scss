@@ -1,0 +1,18 @@
+.material-btn_warning{
+
+	background-color: $color_warning;
+	border-color: $color_warning;
+	color: $color_white;
+	
+	&:hover{
+		color: $color_white;
+		background-color: $color_warning_hover;
+		border-color: $color_warning_hover;
+	}
+
+	&:focus, &:active{
+		background-color: $color_warning_active;
+		border-color: $color_warning_active;
+		color: $color_white;
+	}
+}

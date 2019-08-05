@@ -1,0 +1,120 @@
+{% extends "menu.html" %} 
+{% import 'macros.html' as macros %}
+{% block app_content %}
+<ul class="nav nav-tabs material_tabs">
+  <li role="presentation" class="active">
+    <a href="#main" class="material_tabs_item" data-toggle="tab">Main info</a>
+  </li>
+  {% if current_user.is_anonymous or not current_user.is_owner(notepad) or notepad.is_learned() %}
+    <li role="presentation" class="disabled">
+        <a href="javascript:void(0)" class="material_tabs_item">Playground</a> 
+    </li>
+  {% else %}
+    <li role="presentation" class="">
+      <a href='#playground' class="material_tabs_item" data-toggle="tab">Playground</a>
+    </li>
+  {% endif %}
+  <li role="presentation">
+    <a href="#cards" class="material_tabs_item" data-toggle="tab">Cards</a>
+  </li>
+</ul>
+<div id="myTabContent" class="tab-content materail_tab_content">
+  <div role="tabpanel" class="tab-pane fade active in" id="main" aria-labelledby="main-tab">
+    <div class="row">
+      <div class="media material_media">
+        <div class="media-left">
+          <a href="{{ url_for('user', login=notepad.get_owner().first().login) }}">
+            <img class="media-object material_media_object" alt="10x10" src="{{notepad.get_owner().first().avatar(50)}}"
+              data-holder-rendered="true" style="width: 50px;">
+          </a>
+        </div>
+        <div style="border: none;" class="media-body material_media_body">
+          <h4 class="media-heading material_media_heading">
+            {{notepad.get_owner().first().login}}<small><span style="margin-left: 5px;" class="text-muted">owner</span></small>
+          </h4>
+          <p>
+            <span href="#cards">Cards
+              <span class="badge material_badge">
+                {{notepad.get_cards_count()}}
+              </span>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr style="margin: 0px;">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ notepad.name }}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p class="text-secondary">{{ notepad.description }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <span class="label label-info materail_label materail_label_info">{{notepad.subject}}</span>
+        {% if notepad.is_public() %}
+          <span class="label label-success materail_label materail_label_success">public notepad</span>
+        {% else %}
+          <span class="label label-danger materail_label materail_label_danger">private notepad</span>
+        {% endif %}
+        {% if current_user.is_owner(notepad) %}
+          {% if notepad.is_learned() %}
+            <span class="label label-success materail_label materail_label_success">Notepad is learned. Repeat through {{notepad.day_to_repeat}}</span>
+          {%else%}
+            <span class="label label-warning materail_label materail_label_warning">Repead notepad</span>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-12">
+        {% if current_user.is_authenticated %}
+          {% if current_user.is_owner(notepad) %}
+          <p>
+            <a href="{{url_for('edit_notepad', notepad_id=notepad.notepad_id)}}"
+              ><button class="btn btn-default material_btn material_btn_primary">
+                Edit Notepad
+              </button></a
+            >
+          </p>
+          {% else %}
+          <p>
+            <a id='fork-button' title='You can copy this notepad into your lib.' href="{{ url_for('index') }}"
+              ><button class="btn btn-default material_btn material_btn_primary">
+                Fork Notepad
+              </button></a
+            >
+          </p>
+          {% endif %}
+          {% else %}
+            <p>
+              <a id='fork-button' title='You can copy this notepad into your lib.' href="#">
+                <button class="btn btn-default material_btn material_btn_primary">
+                  Fork Notepad
+                </button>
+              </a>
+            </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="cards" aria-labelledby="cards-tab">
+    {% for card in notepad.get_cards().all() %} {% include '_card.html' %} {%endfor %}
+  </div>
+  <div role='tabpanel' class="tab-pane fade" id='playground' aria-labelledby="playground-tab">
+    <div class="row">
+      <div class="col-sm-4 col-md-3">
+        {{ macros.render_thumbnail("glyphicon glyphicon-tree-conifer", "Classic","Let's play", "PLAY!", url_for("learn",notepad_id=notepad.notepad_id, mode=0))}}
+      </div>
+      <div class="col-sm-4 col-md-3">
+        {{ macros.render_thumbnail("glyphicon glyphicon-fire", "Non Classic","Let's play", "PLAY!", url_for('learn', notepad_id=notepad.notepad_id, mode=1))}}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

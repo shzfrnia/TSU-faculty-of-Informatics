@@ -1,0 +1,64 @@
+@breadcrumb_padding: 8px;
+@breadcrumb_font_size: 15px;
+@breadcrumb_divider_size: 5px;
+
+.material-breadcrumb{
+	
+	border-radius: 0;
+	background-color: @color_white;
+	font-weight: 700;
+	.m_shadow();
+	
+	width: 100%;
+	padding: 0;
+	font-size: 0;
+	
+	& > li{
+		position: relative;
+	}
+	
+	& > li + li:before{
+		
+		content: "";
+		padding: 0;
+		display: inline-block;
+		
+		width: @breadcrumb_divider_size;
+		height: @breadcrumb_divider_size;
+		border-top: 1px solid;
+		border-right: 1px solid;
+		
+		position: absolute;
+		top: 50%;
+		left: -@breadcrumb_divider_size;
+		.m_transform(rotate(45deg) translateY(-50%););
+	}
+}
+	
+.material-breadcrumb__item{
+	padding: @breadcrumb_padding * 1.5;
+}	
+	
+.material-breadcrumb__link{
+	
+	padding: @breadcrumb_padding;
+	font-size: @breadcrumb_font_size;
+	display: inline-block;
+	.m_transition(background-color, .5s, ease-out, 0s);
+	
+	&:hover, &:active{
+		text-decoration: none;
+	}
+}
+
+.material-breadcrumb__active-element{
+	padding: @breadcrumb_padding;
+	font-size: @breadcrumb_font_size;
+}
+ 
+@import 'modifier/default.less';
+@import 'modifier/primary.less';
+@import 'modifier/success.less';
+@import 'modifier/info.less';
+@import 'modifier/warning.less';
+@import 'modifier/danger.less';

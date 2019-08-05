@@ -1,0 +1,48 @@
+{% macro render_material_input(field, placeholder = "Empty", input_type='text') -%}
+    {% if field.errors %}
+    <div class="form-group materail_input_block materail_input_error">
+        {{ field(class='form-control materail_input', type=input_type, placeholder=placeholder) }} 
+    </div>
+    {% for error in field.errors %}
+        <p class="help-block">{{ error }}</p>
+    {% endfor %}
+    {% else %}
+    <div class="form-group materail_input_block">
+    {{ field(class='form-control materail_input', type=input_type, placeholder=placeholder) }} 
+    </div>
+    {% endif %}
+{%- endmacro %}
+
+{% macro render_menu_item(name, url, icon=None) -%}
+    {% if request.url_rule|string == url %}
+        <li class="active">
+            <a class="material_navbar_nav_item" href="{{url}}">
+                <span class="{{icon}}" aria-hidden="true"></span>
+                {{name}}
+            </a>
+        </li>
+    {% else %}
+        <li>
+            <a class="material_navbar_nav_item" href="{{url}}">
+                <span class="{{icon}}" aria-hidden="true"></span>
+                {{name}}
+            </a>
+        </li>
+    {% endif %}
+{%- endmacro %}
+
+{% macro render_thumbnail(icon, header, text, text_link , link) -%}
+<div class="thumbnail material_thumbnail">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <br>
+            <span style='font-size: 2.5em' class="{{icon}}"></span>
+        </div>
+    </div>
+    <div class="caption material_caption">
+        <h3>{{header}}</h3>
+        <p>{{text}}</p>
+        <p><a href="{{link}}" class="btn btn-default material_btn" role="button">{{text_link}}</a></p>
+    </div>
+</div>
+{%- endmacro %}

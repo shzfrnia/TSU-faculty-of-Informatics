@@ -1,0 +1,24 @@
+@mixin m_transition($property, $time, $effect, $delay){
+	-webkit-transition: $property $time $effect $delay;
+	transition: $property $time $effect $delay;
+}
+
+@mixin m_complex_transition($property, $property2, $time, $effect, $delay){
+
+	-webkit-transition-property: $property, $property2;	
+	transition-property: $property, $property2;
+	
+	-webkit-transition-duration: $time;
+	transition-duration: $time;
+	
+	 -webkit-transition-timing-function: $effect;
+	transition-timing-function: $effect;
+	
+	-webkit-transition-delay: $delay;
+	transition-delay: $delay;
+}
+
+@mixin m_animation($name, $time){
+	-webkit-animation: $name $time;
+	animation: $name $time;
+}
